@@ -217,41 +217,54 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          BottomButton(buttonTitle:"CALCULATE",
-          onTap: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => ResultsPage(),));
-          },),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
+            },
+            child: Container(
+              child: Center(
+                child: Text(
+                  'CALCULATE',
+                  style: kLargeButtonTextStyle,
+                ),
+              ),
+              color: kbottomCardColour,
+              margin: EdgeInsets.only(top: 10.0),
+              padding: EdgeInsets.only(bottom: 20.0),
+              width: double.infinity,
+              height: kbottomContainerHeight,
+            ),
+          )
         ],
       ),
     );
   }
 }
 
-class BottomButton extends StatelessWidget {
-  BottomButton({required this.onTap, required this.buttonTitle})
-  final Function() onTap;
-  final String buttonTitle;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        color: kbottomCardColour,
-        margin: EdgeInsets.only(top: 10),
-        height: kbottomContainerHeight,
-        width: double.infinity,
-        child: Center(
-          child: Text(
-            buttonTitle,
-            style: kLargeButtonTextStyle,
-          ),
-        ),
-      ),
-    );
-  }
-}
+// class BottomButton extends StatelessWidget {
+//   BottomButton({required this.onTap, required this.buttonTitle})
+//   final Function() onTap;
+//   final String buttonTitle;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//       onTap: onTap,
+//       child: Container(
+//         color: kbottomCardColour,
+//         margin: EdgeInsets.only(top: 10),
+//         height: kbottomContainerHeight,
+//         width: double.infinity,
+//         child: Center(
+//           child: Text(
+//             buttonTitle,
+//             style: kLargeButtonTextStyle,
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 class RoundIconButton extends StatelessWidget {
   RoundIconButton({required this.icon, required this.onPressed});
