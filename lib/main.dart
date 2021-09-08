@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'inputPage.dart';
+import 'screens/inputPage.dart';
 
 void main(List<String> args) {
   runApp(BMICalculator());
